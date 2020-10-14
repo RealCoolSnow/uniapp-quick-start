@@ -1,19 +1,24 @@
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png" />
+    <image class="logo" src="/static/images/logo.png" />
     <view>
       <text class="title">
-        {{ title }}
+        {{ msg }}
       </text>
+      <button @click="this.msg='button clicked'">
+        click
+      </button>
     </view>
   </view>
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
   setup() {
+    const msg = ref('Hello World')
     return {
-      title: 'hello',
+      msg,
     }
   },
 }
