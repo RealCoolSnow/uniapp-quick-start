@@ -4,11 +4,11 @@ module.exports = {
   testEnvironmentOptions: {},
   testTimeout: 15000,
   reporters: [
-    'default'
+    'default',
   ],
   watchPathIgnorePatterns: ['/node_modules/', '/dist/', '/.git/'],
   moduleFileExtensions: ['js', 'json'],
   rootDir: __dirname,
   testMatch: ['<rootDir>/src/**/*test.[jt]s?(x)'],
-  testPathIgnorePatterns: ['/node_modules/']
+  testPathIgnorePatterns: ['/node_modules/'],
 }
