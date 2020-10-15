@@ -60,7 +60,8 @@
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.11",
-    "vuex": "^4.0.0-beta.4"
+    "vuex": "^4.0.0-beta.4",
+    "vue-i18n": "^9.0.0-beta.4"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.3.3",
@@ -85,7 +86,9 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "ts-loader": "^8.0.5",
     "typescript": "^4.0.3",
+    "vue-property-decorator": "^9.0.2",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
@@ -100,6 +103,9 @@
     "singleQuote": true
   },
   "eslintConfig": {
-    "extends": "@antfu/eslint-config-vue"
+    "extends": "@antfu/eslint-config-vue",
+    "globals": {
+      "uni": true
+    }
   }
 }

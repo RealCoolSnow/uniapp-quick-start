@@ -6,6 +6,7 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -15,7 +16,8 @@
     "types": [
       "@dcloudio/types",
       "miniprogram-api-typings",
-      "mini-types"
+      "mini-types",
+      "node"
     ],
     "plugins": [
       {
