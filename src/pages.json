@@ -5,6 +5,11 @@
 			"style": {
 				"navigationBarTitleText": "uniapp-quick-start"
 			}
+		},{
+			"path": "pages/about/index",
+			"style": {
+				"navigationBarTitleText": "about"
+			}
 		}
 	],
 	"globalStyle": {

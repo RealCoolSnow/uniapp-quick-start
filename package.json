@@ -58,10 +58,11 @@
     "@vue/shared": "^3.0.0",
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
+    "less": "^3.12.2",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.11",
-    "vuex": "^4.0.0-beta.4",
-    "vue-i18n": "^9.0.0-beta.4"
+    "vue-i18n": "^9.0.0-beta.4",
+    "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.3.3",
@@ -83,6 +84,7 @@
     "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
     "jest": "^25.4.0",
+    "less-loader": "^7.0.2",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",

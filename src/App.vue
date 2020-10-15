@@ -9,6 +9,6 @@ export default {
 }
 </script>
 
-<style>
-/*每个页面公共css */
+<style lang="less">
+@import '@/common/styles/index.less';
 </style>

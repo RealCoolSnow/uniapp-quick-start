@@ -1,14 +1,10 @@
 <template>
   <view class="content">
-    <image class="logo" src="/static/images/logo.png" />
-    <view>
-      <text class="title">
-        {{ msg }}
-      </text>
-      <button @click="this.msg='button clicked'">
-        click
+    <navigator url="/pages/about/index">
+      <button type="primary">
+        Show About
       </button>
-    </view>
+    </navigator>
   </view>
 </template>
 
@@ -27,17 +23,6 @@ export default {
 <style>
 .content {
   text-align: center;
-  height: 400upx;
-}
-
-.logo {
-  height: 200upx;
-  width: 200upx;
-  margin-top: 200upx;
-}
-
-.title {
-  font-size: 36upx;
-  color: #8f8f94;
+  padding: 20rpx 20rpx;
 }
 </style>
