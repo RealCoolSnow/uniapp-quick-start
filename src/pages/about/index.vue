@@ -1,7 +1,25 @@
 <template>
-  <div class="flex justify-center">
-    about
+  <div class="container">
+    <logo />
+    <text>this is about page</text>
   </div>
 </template>
-<style lang="less" scoped>
+<script>
+import Logo from '@/components/Logo'
+export default {
+  components: {
+    Logo,
+  },
+  setup() {},
+}
+</script>
+<style lang="less">
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text {
+    font-size: @font-base;
+  }
+}
 </style>

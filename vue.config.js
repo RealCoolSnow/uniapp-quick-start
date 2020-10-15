@@ -1,5 +1,6 @@
 process.env.UNI_USING_VUE3 = true
 process.env.UNI_USING_VUE3_OPTIONS_API = true
+const path = require('path')
 module.exports = {
   configureWebpack: {
     resolve: { extensions: ['.ts', '.tsx', '.js', '.json'] },
@@ -13,6 +14,14 @@ module.exports = {
             appendTsSuffixTo: [/\.vue$/],
           },
         },
+      ],
+    },
+  },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        path.resolve(__dirname, './src/common/styles/variable.less'),
       ],
     },
   },

@@ -1,20 +1,32 @@
 <template>
   <view class="content">
-    <navigator url="/pages/about/index">
-      <button type="primary">
-        Show About
+    <view>
+      <button @click="inc">
+        counter - {{ state.counter }}
       </button>
+    </view>
+    <navigator url="/pages/about/index">
+      <button>Show About</button>
     </navigator>
   </view>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { reactive, computed } from 'vue'
+import store from '@/store'
+import MutationTypes from '@/store/mutation-types'
+
 export default {
   setup() {
-    const msg = ref('Hello World')
+    const state = reactive({
+      counter: computed(() => store.getters.counter),
+    })
+    const inc = () => {
+      store.commit(MutationTypes.APP.SET_COUNTER, 1)
+    }
     return {
-      msg,
+      state,
+      inc,
     }
   },
 }
