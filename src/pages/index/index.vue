@@ -17,6 +17,7 @@ import { reactive, computed } from 'vue'
 import store from '@/store'
 import MutationTypes from '@/store/mutation-types'
 import { helloGet } from '@/service/api'
+import { showAlert } from '@/utils/app'
 
 export default {
   setup() {
@@ -30,9 +31,11 @@ export default {
       helloGet()
         .then((res) => {
           console.log(res)
+          showAlert('success', res)
         })
         .catch((err) => {
           console.log(err)
+          showAlert('fail', err)
         })
     }
     return {
