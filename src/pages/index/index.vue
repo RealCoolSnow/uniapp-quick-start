@@ -1,6 +1,18 @@
 <template>
   <view class="content">
-    <button @click="inc">
+    <button
+      v-if="!state.userInfo.avatarUrl"
+      open-type="getUserInfo"
+      class="mt"
+      @getuserinfo="onGetUserInfo"
+    >
+      getUserInfo
+    </button>
+    <view v-else class="userinfo">
+      <image :src="state.userInfo.avatarUrl" />
+      <text>{{ state.userInfo.nickName }}</text>
+    </view>
+    <button class="mt" @click="inc">
       Counter - {{ state.counter }}
     </button>
     <button class="mt" @click="httpTest">
@@ -23,6 +35,7 @@ export default {
   setup() {
     const state = reactive({
       counter: computed(() => store.getters.counter),
+      userInfo: {},
     })
     const inc = () => {
       store.commit(MutationTypes.APP.SET_COUNTER, 1)
@@ -38,10 +51,15 @@ export default {
           showAlert('fail', err)
         })
     }
+    const onGetUserInfo = (e) => {
+      console.log(e)
+      state.userInfo = e.detail.userInfo
+    }
     return {
       state,
       inc,
       httpTest,
+      onGetUserInfo,
     }
   },
 }
@@ -53,6 +71,19 @@ export default {
   padding: 20rpx 20rpx;
   .mt {
     margin-top: 20rpx;
+  }
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    image {
+      width: 160rpx;
+      height: 160rpx;
+      border-radius: 100%;
+    }
+    text {
+      margin-top: 5rpx;
+    }
   }
 }
 </style>
