@@ -1,12 +1,11 @@
 import { createLogger, createStore } from 'vuex'
+import config from '@/config'
 import app from './modules/app'
 import getters from './getters'
-
-const debug = process.env.NODE_ENV !== 'production'
 
 export default createStore({
   modules: { app },
   getters,
-  strict: debug,
-  plugins: debug ? [createLogger()] : [],
+  strict: config.debug,
+  plugins: config.debug ? [createLogger()] : [],
 })

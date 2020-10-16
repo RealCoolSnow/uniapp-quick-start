@@ -18,8 +18,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20rpx;
   text {
     font-size: @font-base;
+    color: @primary-color;
   }
 }
 </style>
